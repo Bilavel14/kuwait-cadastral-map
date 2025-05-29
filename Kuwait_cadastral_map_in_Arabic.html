@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_827587f157b26e4d495a2aeb507c6984 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed;
+     bottom: 20px; right: 20px; width: 100px; height: 30px;
+     background-color: white;
+     z-index: 9999; font-size: 12px;
+     text-align: center; line-height: 30px;
+     border: 1px solid black;">
+     ~ مقياس الرسم ~
+</div>
+    
+            <div class="folium-map" id="map_827587f157b26e4d495a2aeb507c6984" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_827587f157b26e4d495a2aeb507c6984 = L.map(
+                "map_827587f157b26e4d495a2aeb507c6984",
+                {
+                    center: [29.3873, 48.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 18,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_62a2e98d0041d519730cf4f6d68eea8e = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_62a2e98d0041d519730cf4f6d68eea8e.addTo(map_827587f157b26e4d495a2aeb507c6984);
+        
+    
+        function geo_json_b95888bb259a15c6bda1ea5f883d28dd_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0, "weight": 2};
+            }
+        }
+
+        function geo_json_b95888bb259a15c6bda1ea5f883d28dd_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_b95888bb259a15c6bda1ea5f883d28dd = L.geoJson(null, {
+                onEachFeature: geo_json_b95888bb259a15c6bda1ea5f883d28dd_onEachFeature,
+            
+                style: geo_json_b95888bb259a15c6bda1ea5f883d28dd_styler,
+            ...{
+}
+        });
+
+        function geo_json_b95888bb259a15c6bda1ea5f883d28dd_add (data) {
+            geo_json_b95888bb259a15c6bda1ea5f883d28dd
+                .addData(data);
+        }
+            geo_json_b95888bb259a15c6bda1ea5f883d28dd_add({"bbox": [47.999, 29.3862, 48.00082, 29.3881], "features": [{"bbox": [47.999, 29.3862, 48.00082, 29.3881], "geometry": {"coordinates": [[[47.999, 29.3881], [48.0008, 29.38805], [48.00082, 29.3862], [47.99902, 29.38625], [47.999, 29.3881]]], "type": "Polygon"}, "id": "0", "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_b95888bb259a15c6bda1ea5f883d28dd.addTo(map_827587f157b26e4d495a2aeb507c6984);
+        
+    
+        function geo_json_47bb2954eca0bb557e59581791c88fe9_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "yellow", "fillColor": "yellow", "fillOpacity": 0.4, "weight": 2};
+            }
+        }
+
+        function geo_json_47bb2954eca0bb557e59581791c88fe9_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_47bb2954eca0bb557e59581791c88fe9 = L.geoJson(null, {
+                onEachFeature: geo_json_47bb2954eca0bb557e59581791c88fe9_onEachFeature,
+            
+                style: geo_json_47bb2954eca0bb557e59581791c88fe9_styler,
+            ...{
+}
+        });
+
+        function geo_json_47bb2954eca0bb557e59581791c88fe9_add (data) {
+            geo_json_47bb2954eca0bb557e59581791c88fe9
+                .addData(data);
+        }
+            geo_json_47bb2954eca0bb557e59581791c88fe9_add({"features": [{"geometry": {"coordinates": [[[47.9999802, 29.3871762], [48.0003236, 29.3868817], [48.0004147, 29.3869659], [48.0003075, 29.3870407], [48.0005006, 29.3871622], [48.0002431, 29.3873819], [47.9999802, 29.3871762]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_47bb2954eca0bb557e59581791c88fe9.bindTooltip(
+                `<div>
+                     قطعة 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_e1f3353c12d60c5b94b74b98c0cf8672 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fd430a17a28c6b3606bec651297ca422 = $(`<div id="html_fd430a17a28c6b3606bec651297ca422" style="width: 100.0%; height: 100.0%;">         <div dir="rtl">         <b>قطعة 1</b><br>         <b>معرّف القطعة:</b> P001<br>         <b>المالك:</b> أحمد<br>         <b>المساحة:</b> 500 م²<br>         <b>الاستخدام:</b> سكني<br>         <b>تم التحقق:</b> نعم<br>         <b>ملاحظات:</b> زاوية         </div>         </div>`)[0];
+                popup_e1f3353c12d60c5b94b74b98c0cf8672.setContent(html_fd430a17a28c6b3606bec651297ca422);
+            
+        
+
+        geo_json_47bb2954eca0bb557e59581791c88fe9.bindPopup(popup_e1f3353c12d60c5b94b74b98c0cf8672)
+        ;
+
+        
+    
+    
+            geo_json_47bb2954eca0bb557e59581791c88fe9.addTo(map_827587f157b26e4d495a2aeb507c6984);
+        
+    
+        function geo_json_27ba74c8615402584c35cd65ab72e776_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "yellow", "fillColor": "yellow", "fillOpacity": 0.4, "weight": 2};
+            }
+        }
+
+        function geo_json_27ba74c8615402584c35cd65ab72e776_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_27ba74c8615402584c35cd65ab72e776 = L.geoJson(null, {
+                onEachFeature: geo_json_27ba74c8615402584c35cd65ab72e776_onEachFeature,
+            
+                style: geo_json_27ba74c8615402584c35cd65ab72e776_styler,
+            ...{
+}
+        });
+
+        function geo_json_27ba74c8615402584c35cd65ab72e776_add (data) {
+            geo_json_27ba74c8615402584c35cd65ab72e776
+                .addData(data);
+        }
+            geo_json_27ba74c8615402584c35cd65ab72e776_add({"features": [{"geometry": {"coordinates": [[[47.9997701, 29.3861861], [47.9999007, 29.3860085], [48.0001153, 29.3861284], [47.9999847, 29.386306], [47.9997701, 29.3861861]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_27ba74c8615402584c35cd65ab72e776.bindTooltip(
+                `<div>
+                     قطعة 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_92b343c2d2532c51a3c71da56f8be65f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9322df1941945f570af7b0673e833e54 = $(`<div id="html_9322df1941945f570af7b0673e833e54" style="width: 100.0%; height: 100.0%;">         <div dir="rtl">         <b>قطعة 2</b><br>         <b>معرّف القطعة:</b> P002<br>         <b>المالك:</b> سارة<br>         <b>المساحة:</b> 450 م²<br>         <b>الاستخدام:</b> تجاري<br>         <b>تم التحقق:</b> لا<br>         <b>ملاحظات:</b> تحت الإنشاء         </div>         </div>`)[0];
+                popup_92b343c2d2532c51a3c71da56f8be65f.setContent(html_9322df1941945f570af7b0673e833e54);
+            
+        
+
+        geo_json_27ba74c8615402584c35cd65ab72e776.bindPopup(popup_92b343c2d2532c51a3c71da56f8be65f)
+        ;
+
+        
+    
+    
+            geo_json_27ba74c8615402584c35cd65ab72e776.addTo(map_827587f157b26e4d495a2aeb507c6984);
+        
+    
+        function geo_json_b4ac92a7722c5a778234d0c4f084adb1_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "yellow", "fillColor": "yellow", "fillOpacity": 0.4, "weight": 2};
+            }
+        }
+
+        function geo_json_b4ac92a7722c5a778234d0c4f084adb1_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_b4ac92a7722c5a778234d0c4f084adb1 = L.geoJson(null, {
+                onEachFeature: geo_json_b4ac92a7722c5a778234d0c4f084adb1_onEachFeature,
+            
+                style: geo_json_b4ac92a7722c5a778234d0c4f084adb1_styler,
+            ...{
+}
+        });
+
+        function geo_json_b4ac92a7722c5a778234d0c4f084adb1_add (data) {
+            geo_json_b4ac92a7722c5a778234d0c4f084adb1
+                .addData(data);
+        }
+            geo_json_b4ac92a7722c5a778234d0c4f084adb1_add({"features": [{"geometry": {"coordinates": [[[47.9996306, 29.3868592], [47.9997612, 29.3866816], [47.9999758, 29.3868015], [47.9998452, 29.386979], [47.9996306, 29.3868592]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_b4ac92a7722c5a778234d0c4f084adb1.bindTooltip(
+                `<div>
+                     قطعة 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_f05b59e9665b708c8e8876fd3a1715e3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_75255ca9f6e0b7b54e05f7a48becd96d = $(`<div id="html_75255ca9f6e0b7b54e05f7a48becd96d" style="width: 100.0%; height: 100.0%;">         <div dir="rtl">         <b>قطعة 3</b><br>         <b>معرّف القطعة:</b> P003<br>         <b>المالك:</b> بلال<br>         <b>المساحة:</b> 600 م²<br>         <b>الاستخدام:</b> مصنع<br>         <b>تم التحقق:</b> نعم<br>         <b>ملاحظات:</b> بالقرب من الطريق         </div>         </div>`)[0];
+                popup_f05b59e9665b708c8e8876fd3a1715e3.setContent(html_75255ca9f6e0b7b54e05f7a48becd96d);
+            
+        
+
+        geo_json_b4ac92a7722c5a778234d0c4f084adb1.bindPopup(popup_f05b59e9665b708c8e8876fd3a1715e3)
+        ;
+
+        
+    
+    
+            geo_json_b4ac92a7722c5a778234d0c4f084adb1.addTo(map_827587f157b26e4d495a2aeb507c6984);
+        
+    
+        function geo_json_430869f080c1f3f50e1b81255a85b83a_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "yellow", "fillColor": "yellow", "fillOpacity": 0.4, "weight": 2};
+            }
+        }
+
+        function geo_json_430869f080c1f3f50e1b81255a85b83a_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_430869f080c1f3f50e1b81255a85b83a = L.geoJson(null, {
+                onEachFeature: geo_json_430869f080c1f3f50e1b81255a85b83a_onEachFeature,
+            
+                style: geo_json_430869f080c1f3f50e1b81255a85b83a_styler,
+            ...{
+}
+        });
+
+        function geo_json_430869f080c1f3f50e1b81255a85b83a_add (data) {
+            geo_json_430869f080c1f3f50e1b81255a85b83a
+                .addData(data);
+        }
+            geo_json_430869f080c1f3f50e1b81255a85b83a_add({"features": [{"geometry": {"coordinates": [[[48.0000383, 29.3863637], [48.0001689, 29.3861862], [48.0003835, 29.386306], [48.0002529, 29.3864836], [48.0000383, 29.3863637]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_430869f080c1f3f50e1b81255a85b83a.bindTooltip(
+                `<div>
+                     قطعة 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_e1511632222dcc44d3b1bd7f22f92022 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9ff0d94cb6599b753ecd38c72d11ee55 = $(`<div id="html_9ff0d94cb6599b753ecd38c72d11ee55" style="width: 100.0%; height: 100.0%;">         <div dir="rtl">         <b>قطعة 4</b><br>         <b>معرّف القطعة:</b> P004<br>         <b>المالك:</b> عائشة<br>         <b>المساحة:</b> 520 م²<br>         <b>الاستخدام:</b> سكني<br>         <b>تم التحقق:</b> نعم<br>         <b>ملاحظات:</b> مشكلة كهرباء         </div>         </div>`)[0];
+                popup_e1511632222dcc44d3b1bd7f22f92022.setContent(html_9ff0d94cb6599b753ecd38c72d11ee55);
+            
+        
+
+        geo_json_430869f080c1f3f50e1b81255a85b83a.bindPopup(popup_e1511632222dcc44d3b1bd7f22f92022)
+        ;
+
+        
+    
+    
+            geo_json_430869f080c1f3f50e1b81255a85b83a.addTo(map_827587f157b26e4d495a2aeb507c6984);
+        
+    
+        function geo_json_778539385b9d2fba19e7756aa50fc8d1_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "yellow", "fillColor": "yellow", "fillOpacity": 0.4, "weight": 2};
+            }
+        }
+
+        function geo_json_778539385b9d2fba19e7756aa50fc8d1_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_778539385b9d2fba19e7756aa50fc8d1 = L.geoJson(null, {
+                onEachFeature: geo_json_778539385b9d2fba19e7756aa50fc8d1_onEachFeature,
+            
+                style: geo_json_778539385b9d2fba19e7756aa50fc8d1_styler,
+            ...{
+}
+        });
+
+        function geo_json_778539385b9d2fba19e7756aa50fc8d1_add (data) {
+            geo_json_778539385b9d2fba19e7756aa50fc8d1
+                .addData(data);
+        }
+            geo_json_778539385b9d2fba19e7756aa50fc8d1_add({"features": [{"geometry": {"coordinates": [[[47.9998398, 29.3865974], [47.9999704, 29.3864199], [48.000185, 29.3865397], [48.0000544, 29.3867173], [47.9998398, 29.3865974]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_778539385b9d2fba19e7756aa50fc8d1.bindTooltip(
+                `<div>
+                     قطعة 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_25c66e1ec6c876d6b1abfb8b1b06ee09 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1584cf7ec1a5109f97fb17561be2e0a8 = $(`<div id="html_1584cf7ec1a5109f97fb17561be2e0a8" style="width: 100.0%; height: 100.0%;">         <div dir="rtl">         <b>قطعة 5</b><br>         <b>معرّف القطعة:</b> P005<br>         <b>المالك:</b> عمر<br>         <b>المساحة:</b> 480 م²<br>         <b>الاستخدام:</b> مخزن<br>         <b>تم التحقق:</b> لا<br>         <b>ملاحظات:</b> سياج منخفض         </div>         </div>`)[0];
+                popup_25c66e1ec6c876d6b1abfb8b1b06ee09.setContent(html_1584cf7ec1a5109f97fb17561be2e0a8);
+            
+        
+
+        geo_json_778539385b9d2fba19e7756aa50fc8d1.bindPopup(popup_25c66e1ec6c876d6b1abfb8b1b06ee09)
+        ;
+
+        
+    
+    
+            geo_json_778539385b9d2fba19e7756aa50fc8d1.addTo(map_827587f157b26e4d495a2aeb507c6984);
+        
+    
+        function geo_json_c03d3328a810a68e826467ac46bc47d9_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "yellow", "fillColor": "yellow", "fillOpacity": 0.4, "weight": 2};
+            }
+        }
+
+        function geo_json_c03d3328a810a68e826467ac46bc47d9_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_c03d3328a810a68e826467ac46bc47d9 = L.geoJson(null, {
+                onEachFeature: geo_json_c03d3328a810a68e826467ac46bc47d9_onEachFeature,
+            
+                style: geo_json_c03d3328a810a68e826467ac46bc47d9_styler,
+            ...{
+}
+        });
+
+        function geo_json_c03d3328a810a68e826467ac46bc47d9_add (data) {
+            geo_json_c03d3328a810a68e826467ac46bc47d9
+                .addData(data);
+        }
+            geo_json_c03d3328a810a68e826467ac46bc47d9_add({"features": [{"geometry": {"coordinates": [[[47.9987058, 29.3866448], [47.9988364, 29.3864672], [47.9990511, 29.3865871], [47.9989204, 29.3867646], [47.9987058, 29.3866448]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_c03d3328a810a68e826467ac46bc47d9.bindTooltip(
+                `<div>
+                     قطعة 6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_86e2f66cad5890a6d83dfc4e66f99a25 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_22a0de63170457981b3a343937f75ac8 = $(`<div id="html_22a0de63170457981b3a343937f75ac8" style="width: 100.0%; height: 100.0%;">         <div dir="rtl">         <b>قطعة 6</b><br>         <b>معرّف القطعة:</b> P006<br>         <b>المالك:</b> فاطمة<br>         <b>المساحة:</b> 700 م²<br>         <b>الاستخدام:</b> مصنع<br>         <b>تم التحقق:</b> نعم<br>         <b>ملاحظات:</b> حدود مشتركة         </div>         </div>`)[0];
+                popup_86e2f66cad5890a6d83dfc4e66f99a25.setContent(html_22a0de63170457981b3a343937f75ac8);
+            
+        
+
+        geo_json_c03d3328a810a68e826467ac46bc47d9.bindPopup(popup_86e2f66cad5890a6d83dfc4e66f99a25)
+        ;
+
+        
+    
+    
+            geo_json_c03d3328a810a68e826467ac46bc47d9.addTo(map_827587f157b26e4d495a2aeb507c6984);
+        
+    
+        function geo_json_055760d8dd4b79fb1dafb5a178991af0_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "yellow", "fillColor": "yellow", "fillOpacity": 0.4, "weight": 2};
+            }
+        }
+
+        function geo_json_055760d8dd4b79fb1dafb5a178991af0_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_055760d8dd4b79fb1dafb5a178991af0 = L.geoJson(null, {
+                onEachFeature: geo_json_055760d8dd4b79fb1dafb5a178991af0_onEachFeature,
+            
+                style: geo_json_055760d8dd4b79fb1dafb5a178991af0_styler,
+            ...{
+}
+        });
+
+        function geo_json_055760d8dd4b79fb1dafb5a178991af0_add (data) {
+            geo_json_055760d8dd4b79fb1dafb5a178991af0
+                .addData(data);
+        }
+            geo_json_055760d8dd4b79fb1dafb5a178991af0_add({"features": [{"geometry": {"coordinates": [[[47.9989311, 29.3867861], [47.9990618, 29.3866086], [47.9992764, 29.3867285], [47.9991458, 29.386906], [47.9989311, 29.3867861]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_055760d8dd4b79fb1dafb5a178991af0.bindTooltip(
+                `<div>
+                     قطعة 7
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_42245349bf9df3b5ff13a4da35a4ae13 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_398b16fc27c853efe19a824e4295b091 = $(`<div id="html_398b16fc27c853efe19a824e4295b091" style="width: 100.0%; height: 100.0%;">         <div dir="rtl">         <b>قطعة 7</b><br>         <b>معرّف القطعة:</b> P007<br>         <b>المالك:</b> زين<br>         <b>المساحة:</b> 550 م²<br>         <b>الاستخدام:</b> سكني<br>         <b>تم التحقق:</b> لا<br>         <b>ملاحظات:</b> أرض فارغة         </div>         </div>`)[0];
+                popup_42245349bf9df3b5ff13a4da35a4ae13.setContent(html_398b16fc27c853efe19a824e4295b091);
+            
+        
+
+        geo_json_055760d8dd4b79fb1dafb5a178991af0.bindPopup(popup_42245349bf9df3b5ff13a4da35a4ae13)
+        ;
+
+        
+    
+    
+            geo_json_055760d8dd4b79fb1dafb5a178991af0.addTo(map_827587f157b26e4d495a2aeb507c6984);
+        
+    
+        function geo_json_3cdb9de1b7af90655db1ee1a0bc15a24_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "yellow", "fillColor": "yellow", "fillOpacity": 0.4, "weight": 2};
+            }
+        }
+
+        function geo_json_3cdb9de1b7af90655db1ee1a0bc15a24_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_3cdb9de1b7af90655db1ee1a0bc15a24 = L.geoJson(null, {
+                onEachFeature: geo_json_3cdb9de1b7af90655db1ee1a0bc15a24_onEachFeature,
+            
+                style: geo_json_3cdb9de1b7af90655db1ee1a0bc15a24_styler,
+            ...{
+}
+        });
+
+        function geo_json_3cdb9de1b7af90655db1ee1a0bc15a24_add (data) {
+            geo_json_3cdb9de1b7af90655db1ee1a0bc15a24
+                .addData(data);
+        }
+            geo_json_3cdb9de1b7af90655db1ee1a0bc15a24_add({"features": [{"geometry": {"coordinates": [[[47.9987832, 29.3883082], [47.9991913, 29.3877605], [47.9992932, 29.3877932], [47.9991204, 29.3880252], [47.9994157, 29.3881922], [47.999262, 29.3883986], [47.9991946, 29.3883606], [47.9991001, 29.3884875], [47.9987832, 29.3883082]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_3cdb9de1b7af90655db1ee1a0bc15a24.bindTooltip(
+                `<div>
+                     قطعة 8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_454305ce581da7a7bc66e5caf0236958 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4214cbb061b470521d224946bae536ca = $(`<div id="html_4214cbb061b470521d224946bae536ca" style="width: 100.0%; height: 100.0%;">         <div dir="rtl">         <b>قطعة 8</b><br>         <b>معرّف القطعة:</b> P008<br>         <b>المالك:</b> ريهان<br>         <b>المساحة:</b> 650 م²<br>         <b>الاستخدام:</b> تجاري<br>         <b>تم التحقق:</b> نعم<br>         <b>ملاحظات:</b> تم التحقق         </div>         </div>`)[0];
+                popup_454305ce581da7a7bc66e5caf0236958.setContent(html_4214cbb061b470521d224946bae536ca);
+            
+        
+
+        geo_json_3cdb9de1b7af90655db1ee1a0bc15a24.bindPopup(popup_454305ce581da7a7bc66e5caf0236958)
+        ;
+
+        
+    
+    
+            geo_json_3cdb9de1b7af90655db1ee1a0bc15a24.addTo(map_827587f157b26e4d495a2aeb507c6984);
+        
+    
+        function geo_json_bde4b546d41227f025d52bb656a8bcaa_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "yellow", "fillColor": "yellow", "fillOpacity": 0.4, "weight": 2};
+            }
+        }
+
+        function geo_json_bde4b546d41227f025d52bb656a8bcaa_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_bde4b546d41227f025d52bb656a8bcaa = L.geoJson(null, {
+                onEachFeature: geo_json_bde4b546d41227f025d52bb656a8bcaa_onEachFeature,
+            
+                style: geo_json_bde4b546d41227f025d52bb656a8bcaa_styler,
+            ...{
+}
+        });
+
+        function geo_json_bde4b546d41227f025d52bb656a8bcaa_add (data) {
+            geo_json_bde4b546d41227f025d52bb656a8bcaa
+                .addData(data);
+        }
+            geo_json_bde4b546d41227f025d52bb656a8bcaa_add({"features": [{"geometry": {"coordinates": [[[47.999256, 29.387702], [47.9996401, 29.3871817], [48.0002504, 29.3875238], [47.9999409, 29.3879429], [47.9998242, 29.3878774], [47.9997494, 29.3879786], [47.999256, 29.387702]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_bde4b546d41227f025d52bb656a8bcaa.bindTooltip(
+                `<div>
+                     قطعة 9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        var popup_b3d84e2edd156797b4db6f8cc70ab2d3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_52edc1b54014dac067032bce32f752bc = $(`<div id="html_52edc1b54014dac067032bce32f752bc" style="width: 100.0%; height: 100.0%;">         <div dir="rtl">         <b>قطعة 9</b><br>         <b>معرّف القطعة:</b> P009<br>         <b>المالك:</b> سناء<br>         <b>المساحة:</b> 430 م²<br>         <b>الاستخدام:</b> سكني<br>         <b>تم التحقق:</b> نعم<br>         <b>ملاحظات:</b> منزل صغير         </div>         </div>`)[0];
+                popup_b3d84e2edd156797b4db6f8cc70ab2d3.setContent(html_52edc1b54014dac067032bce32f752bc);
+            
+        
+
+        geo_json_bde4b546d41227f025d52bb656a8bcaa.bindPopup(popup_b3d84e2edd156797b4db6f8cc70ab2d3)
+        ;
+
+        
+    
+    
+            geo_json_bde4b546d41227f025d52bb656a8bcaa.addTo(map_827587f157b26e4d495a2aeb507c6984);
+        
+    
+            var mouse_position_bcbd1438ff6900a6164c1956abf531d0 = new L.Control.MousePosition(
+                {
+  "position": "topright",
+  "separator": " | ",
+  "emptyString": "Unavailable",
+  "lngFirst": false,
+  "numDigits": 5,
+  "prefix": "\u0627\u0644\u0625\u062d\u062f\u0627\u062b\u064a\u0627\u062a:",
+}
+            );
+            mouse_position_bcbd1438ff6900a6164c1956abf531d0.options["latFormatter"] =
+                function(num) {return L.Util.formatNum(num, 6);};
+            mouse_position_bcbd1438ff6900a6164c1956abf531d0.options["lngFormatter"] =
+                function(num) {return L.Util.formatNum(num, 6);};
+            map_827587f157b26e4d495a2aeb507c6984.addControl(mouse_position_bcbd1438ff6900a6164c1956abf531d0);
+        
+    
+            var layer_control_67d2127a110887e228172d5aee1e0807_layers = {
+                base_layers : {
+                    "esriworldimagery" : tile_layer_62a2e98d0041d519730cf4f6d68eea8e,
+                },
+                overlays :  {
+                    "\u0645\u0646\u0637\u0642\u0629 \u0627\u0644\u062f\u0631\u0627\u0633\u0629" : geo_json_b95888bb259a15c6bda1ea5f883d28dd,
+                    "\u0642\u0637\u0639\u0629 1" : geo_json_47bb2954eca0bb557e59581791c88fe9,
+                    "\u0642\u0637\u0639\u0629 2" : geo_json_27ba74c8615402584c35cd65ab72e776,
+                    "\u0642\u0637\u0639\u0629 3" : geo_json_b4ac92a7722c5a778234d0c4f084adb1,
+                    "\u0642\u0637\u0639\u0629 4" : geo_json_430869f080c1f3f50e1b81255a85b83a,
+                    "\u0642\u0637\u0639\u0629 5" : geo_json_778539385b9d2fba19e7756aa50fc8d1,
+                    "\u0642\u0637\u0639\u0629 6" : geo_json_c03d3328a810a68e826467ac46bc47d9,
+                    "\u0642\u0637\u0639\u0629 7" : geo_json_055760d8dd4b79fb1dafb5a178991af0,
+                    "\u0642\u0637\u0639\u0629 8" : geo_json_3cdb9de1b7af90655db1ee1a0bc15a24,
+                    "\u0642\u0637\u0639\u0629 9" : geo_json_bde4b546d41227f025d52bb656a8bcaa,
+                },
+            };
+            let layer_control_67d2127a110887e228172d5aee1e0807 = L.control.layers(
+                layer_control_67d2127a110887e228172d5aee1e0807_layers.base_layers,
+                layer_control_67d2127a110887e228172d5aee1e0807_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_827587f157b26e4d495a2aeb507c6984);
+
+        
+</script>
+</html>
